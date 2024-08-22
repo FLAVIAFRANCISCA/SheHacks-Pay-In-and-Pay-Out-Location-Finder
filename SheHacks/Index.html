@@ -1,51 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pay-In and Pay-Out Location Finder</title>
     <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+  </head>
+
+  <body>
     <header>
-        <h1>Pay-In and Pay-Out Location Finder</h1>
+      <h1>Pay-In and Pay-Out Location Finder</h1>
     </header>
 
-<<<<<<< Updated upstream
-    <main>
-        <section class="search-section">
-            <h2>Find Your Nearest Location</h2>
-            <form id="locationForm">
-                <label for="location">Enter Location:</label>
-                <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    placeholder="e.g., Johannesburg"
-                    required
-                />
-                <button type="submit">Search</button>
-                <p id="result"></p>
-            </form>
-        </section>
-=======
     <div class="container">
       <section class="search-section">
         <h2>Find Your Nearest Location</h2>
         <form id="locationForm">
           <label for="partner">Select Pay-Out Partner:</label>
           <select id="partner" name="partner" required></select>
->>>>>>> Stashed changes
 
-        <section id="results" class="results-section">
-            <!-- Results will be displayed here -->
-        </section>
-    </main>
+          <label for="location">Enter Location:</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="e.g., Johannesburg"
+            required
+          />
+          <button type="submit">Search</button>
+        </form>
+      </section>
 
-    <footer>
-        <p>&copy; 2024 Pay-In and Pay-Out Finder</p>
-    </footer>
+      <section id="results" class="results"></section>
+    </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
