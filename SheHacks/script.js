@@ -1,17 +1,34 @@
 document.addEventListener("DOMContentLoaded", function () {
   const partnerSelect = document.getElementById("partner");
+  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+  const partnersApiUrl =
+    "https://api-ubt.mukuru.com/taurus/v1/resources/pay-out-partners";
 
-  // fetching the partners
-
-  fetch("https://api-ubt.mukuru.com/taurus/v1/resources/pay-out-partners")
-    .then((response) => response.json())
+  // Fetching the pay-out partners
+  fetch(proxyUrl + partnersApiUrl, {
+    method: "GET",
+    headers: {
+      "X-Requested-With": "XMLHttpRequest",
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+      return response.json();
+    })
     .then((data) => {
-      data.forEach((partner) => {
-        const option = document.createElement("option");
-        option.value = partner.guid; // Assuming 'guid' is the unique identifier
-        option.textContent = partner.name;
-        partnerSelect.appendChild(option);
-      });
+      console.log("Pay-out partners:", data);
+      if (Array.isArray(data)) {
+        data.forEach((partner) => {
+          const option = document.createElement("option");
+          option.value = partner.guid;
+          option.textContent = partner.name;
+          partnerSelect.appendChild(option);
+        });
+      } else {
+        console.error("Unexpected API response format:", data);
+      }
     })
     .catch((error) => console.error("Error fetching pay-out partners:", error));
 });
@@ -22,21 +39,43 @@ document
     e.preventDefault();
 
     const partnerGuid = document.getElementById("partner").value;
-    const location = document.getElementById("location").value;
+    const locationQuery = document.getElementById("location").value;
 
-    //    Fetching the location
+    if (!partnerGuid) {
+      alert("Please select a partner.");
+      return;
+    }
 
-    fetch(
-      `https://api-ubt.mukuru.com/taurus/v1/resources/pay-out-partners/${partnerGuid}/locations`
-    )
-      .then((response) => response.json())
+    if (!locationQuery) {
+      alert("Please enter a location.");
+      return;
+    }
+
+    // URL for fetching locations based on selected partner
+    const locationsApiUrl = `https://api-ubt.mukuru.com/taurus/v1/resources/pay-out-partners/${partnerGuid}/locations`;
+
+    fetch(proxyUrl + locationsApiUrl, {
+      method: "GET",
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `Network response was not ok: ${response.statusText}`
+          );
+        }
+        return response.json();
+      })
       .then((locations) => {
+        console.log("Locations received:", locations);
         const filteredLocations = locations.filter((loc) =>
-          loc.address.toLowerCase().includes(location.toLowerCase())
+          loc.address.toLowerCase().includes(locationQuery.toLowerCase())
         );
 
         const resultsSection = document.getElementById("results");
-        resultsSection.innerHTML = `<h3>Results for "${location}" with ${
+        resultsSection.innerHTML = `<h3>Results for "${locationQuery}" with ${
           partnerSelect.options[partnerSelect.selectedIndex].text
         }:</h3>`;
         const resultsList = document.createElement("ul");
