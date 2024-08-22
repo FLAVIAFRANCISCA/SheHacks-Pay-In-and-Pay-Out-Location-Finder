@@ -39,7 +39,30 @@ h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-container a {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2em;
+  color: #fff;
+  background-color: #ff6a00;
+  border-radius: 5px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.buttons-container a:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+.search-section h2 {
   color: #ff6a00;
   margin-bottom: 20px;
 }
