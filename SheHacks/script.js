@@ -49,3 +49,30 @@ document
       })
       .catch((error) => console.error("Error fetching locations:", error));
   });
+
+
+  document.getElementById('locationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const location = document.getElementById('location').value;
+    const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(location)}&format=json&limit=1`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.length > 0) {
+                const latitude = data[0].lat;
+                const longitude = data[0].lon;
+                document.getElementById('result').innerHTML = `
+                    <h2>Coordinates:</h2>
+                    Latitude: ${latitude}<br>
+                    Longitude: ${longitude}
+                `;
+            } else {
+                document.getElementById('result').innerHTML = 'No results found.';
+            }
+        })
+        .catch(error => {
+            document.getElementById('result').innerHTML = 'Error fetching coordinates: ' + error.message;
+        });
+});
