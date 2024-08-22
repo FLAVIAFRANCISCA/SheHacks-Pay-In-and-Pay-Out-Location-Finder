@@ -24,7 +24,8 @@
             placeholder="e.g., Johannesburg"
             required
           />
-          <button type="submit">Search</button>
+          <button type="submit" onclick="showMessage()">Search</button>
+          
         </form>
       </section>
 
@@ -38,5 +39,10 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+      function showMessage() {
+          alert("Button clicked!");
+      }
+  </script>
   </body>
 </html>
