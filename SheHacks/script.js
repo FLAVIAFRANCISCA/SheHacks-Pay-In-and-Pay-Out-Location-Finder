@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const partnerSelect = document.getElementById("partner");
   const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  const partnersApiUrl = "https://api-ubt.mukuru.com/taurus/v1/resources/pay-out-partners";
+  const partnersApiUrl =
+    "https://api-ubt.mukuru.com/taurus/v1/resources/pay-out-partners";
 
   // Fetching the pay-out partners
   fetch(proxyUrl + partnersApiUrl, {
@@ -62,7 +63,9 @@ document
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.statusText}`);
+          throw new Error(
+            `Network response was not ok: ${response.statusText}`
+          );
         }
         return response.json();
       })
