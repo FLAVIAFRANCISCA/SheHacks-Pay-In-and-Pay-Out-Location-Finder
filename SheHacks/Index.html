@@ -6,6 +6,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mukuru Location Finder</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- Add FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            background-image: url('images/MukuruPayPointLocation.webp');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        header {
+            background-color: #ff8800;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo-container {
+            background-color: #ff6a00;
+            padding: 10px;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 150px;
+            height: 50px;
+            background: url("SheHacks/MUKURUlogo-removebg-preview.png") no-repeat center center;
+            background-size: contain;
+            z-index: -1;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Semi-transparent white */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .hero h2 {
+            margin-bottom: 10px;
+            color: #ff6a00;
+        }
+        
+        section h2 {
+            color: #ff6a00;
+            margin-bottom: 10px;
+        }
+        
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .buttons-container a {
+            padding: 15px 25px;
+            font-size: 1.5em;
+            color: #fff;
+            background-color: #ff6a00;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .buttons-container a:hover {
+            background-color: #333;
+            transform: translateY(-2px);
+        }
+        
+        #contact {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        #contact .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        #contact .contact-info div {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        
+        #contact .contact-info i {
+            margin-right: 10px;
+        }
+        
+        footer {
+            background-color: #ff6a00;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        footer p {
+            margin: 0;
+        }
+        /* Responsive styles */
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 10px;
+            }
+            .hero h2 {
+                font-size: 1.5em;
+            }
+            .buttons-container {
+                flex-direction: column;
+            }
+            .buttons-container a {
+                font-size: 1.2em;
+                padding: 10px 20px;
+            }
+            #contact .contact-info {
+                font-size: 0.9em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .buttons-container a {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+            #contact .contact-info div {
+                font-size: 0.8em;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -18,22 +177,15 @@
         </div>
     </header>
 
-
     <main class="container">
-
         <section id="home" class="hero">
-
             <h2>Welcome to Mukuru</h2>
-            <p>
-                Find the nearest location for your pay-in or pay-out services with ease.
-            </p>
+            <p>Find the nearest location for your pay-in or pay-out services with ease.</p>
         </section>
 
         <section id="services">
             <h2>Choose a Service</h2>
-            <p>
-                Select the service you need to find the nearest location for pay-in or pay-out service.
-            </p>
+            <p>Select the service you need to find the nearest location for pay-in or pay-out service.</p>
             <div class="buttons-container">
                 <a href="pay-in.html">Pay-In Location Finder</a>
                 <a href="pay-out.html">Pay-Out Location Finder</a>
@@ -42,10 +194,14 @@
 
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>
-                If you have any questions, feel free to
-                <a href="mailto:contact@mukuru.com">email us</a>.
-            </p>
+            <div class="contact-info">
+                <div><i class="fas fa-building"></i> Building 20, The Waverly Business Park, Wyecroft Road, Observatory, Cape Town Western Cape 7700</div>
+                <div><i class="fas fa-envelope"></i> Email: <a href="mailto:support@mukuru.com">support@mukuru.com</a></div>
+                <div><i class="fas fa-phone"></i> Call: +27 86 0018 555</div>
+                <div><i class="fab fa-whatsapp"></i> WhatsApp: +27 86 0018 555</div>
+                <div><i class="fas fa-sim-card"></i> Free USSD: *130*566#</div>
+                <div><i class="fas fa-clock"></i> Office Hours: Mon - Sat: 08:00 – 19:00 (CAT), Sun: 08:00 - 12:00</div>
+            </div>
         </section>
     </main>
 
