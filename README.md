@@ -2,11 +2,13 @@ Mukuru PAy-Point Location Finder
 ### Team-SheHackers
 Overview
 Welcome to the Payout Location Finder project! This project involves developing a user interface (UI) that interacts with an API endpoint to help customers locate payout locations for collecting remittances. The goal is to create a user-friendly, intuitive, and responsive front end that facilitates an easy and efficient experience for users.
+
 Features
     API Integration: Connects with the provided API endpoint to fetch and display available payout locations based on user input.
     User-Friendly Interface: Features a clean, intuitive design with clear labels, input fields, and informative messages to guide users seamlessly.
     Error Handling: Handles invalid inputs and API response errors gracefully to ensure a smooth user experience.
     Responsive Design: Adapts to both desktop and mobile devices to provide a consistent experience across different screen sizes.
+    
 Requirements
     API Integration
         Utilize the provided API endpoint to retrieve existing payout locations.
@@ -22,6 +24,7 @@ Requirements
     Responsive Design
         Ensure the UI adjusts and functions well on both desktop and mobile devices.
         Test the interface on various screen sizes and orientations to ensure consistent usability.
+        
 Getting Started
     Clone the Repository
     bash
@@ -39,6 +42,7 @@ Getting Started
     Build for Production
         To create a production build, run npm run build.
         The production build will be available in the build directory.
+        
 Usage
     Input Location
         Enter the required location details into the input fields.
@@ -47,11 +51,16 @@ Usage
         The application will display a list of available payout locations based on the user’s input.
     Handle Errors
         If an error occurs, informative messages will guide the user on how to proceed.
+        
 Presentation slides
-https://wethinkcode-community.slack.com/archives/D07JLV42XMF/p1724414463462279
-Contributors
+
+[https://wethinkcode-community.slack.com/archives/D07JLV42XMF/p1724414463462279](https://www.canva.com/design/DAGOqyj2BQk/wfZEYFQPGj_Bvs_Yld0Bww/edit?utm_content=DAGOqyj2BQk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+### Contributors
+
 Samkelo Khambule
 Gift Mphuthi
 Jennifer Botha
 Zuki Xinwa
-Juliet Matevha (edited) 
+Juliet Matevha 
+Flavia Tsho-tsho
