@@ -15,16 +15,9 @@ header {
     position: relative;
 }
 
-header::before {
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 150px;
-    height: 50px;
-    background: url("SheHacks/MUKURUlogo-removebg-preview.png") no-repeat center center;
-    background-size: contain;
-    z-index: -1;
+header img {
+    max-width: 100%;
+    height: auto;
 }
 
 header nav {
@@ -52,12 +45,13 @@ h1 {
 }
 
 .container {
-    /* max-width: 1000px; */
-    margin: 20px 20%;
+    margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 800px;
 }
 
 .hero {
@@ -79,8 +73,9 @@ section h2 {
 
 .buttons-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 10px;
+    align-items: center;
 }
 
 .buttons-container a {
@@ -109,7 +104,14 @@ footer {
 }
 
 footer p {
-    position: absolute;
-    bottom: 0;
     margin: 0;
+}
+
+@media (max-width: 600px) {
+    .buttons-container a {
+        font-size: 1.2em;
+    }
+    .container {
+        width: 95%;
+    }
 }
