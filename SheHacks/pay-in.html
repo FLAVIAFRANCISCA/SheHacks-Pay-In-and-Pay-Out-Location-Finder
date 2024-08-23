@@ -3,50 +3,179 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
     <title>Pay-In Location Finder</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <header>
-      
+      <img src="images/mukurulogo-remove.png" alt="Company Logo" height="100" width="300" />
       <h1>Pay-In Location Finder</h1>
     </header>
 
     <div class="container">
       <section class="search-section">
-        <style>
-          body {
-            background-image: url('images/mukuru-PapPointBooth.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            margin: 0;
-            font-family: Arial, sans-serif;
-          }
-        </style>
-        <h2>Find Your Nearest Pay-In Location</h2>
-        <form id="locationForm">
-          <label for="partner">Select Partner:</label>
-          <select id="partner" name="partner" required>
-            <!-- Options will be dynamically populated -->
-          </select>
-
-          <label for="location">Enter Location:</label>
-          <input
-            type="text"
-            id="location"
-            name="location"
-            placeholder="e.g., Johannesburg"
-            required
-          />
-          <button type="submit">Search</button>
-        </form>
-      </section>
-
-      <section id="results" class="results"></section>
-    </div>
-
-    <script src="script.js"></script>
-  </body>
+        <h2 style="color: #ff6600; font-size: 1.5em;">Find Your Nearest Pay-In Location</h2>
+                        <form>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <select style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                                    <option value="" disabled selected>Select Partner</option>
+                                    <option value="partner1">Partner 1</option>
+                                    <option value="partner2">Partner 2</option>
+                                </select>
+                                <input type="text" placeholder="e.g., Johannesburg" style="flex: 2; padding: 10px; border-radius: 5px; border: 1px solid #ddd;" />
+                                <button type="submit" style="padding: 10px 20px; background-color: #ff6600; color: white; border: none; border-radius: 5px; cursor: pointer;">Search</button>
+                            </div>
+                        </form>
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1">
+                            <title>Location Finder - Mukuru Africa</title>
+                            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+                            <style>
+                                body {
+                                    font-family: Arial, sans-serif;
+                                }
+                        
+                                .content-container {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: flex-start;
+                                    padding: 20px;
+                                    background-color: #f9f9f9;
+                                }
+                        
+                                .location-list-container {
+                                    width: 30%;
+                                    padding: 20px;
+                                    background-color: #fff;
+                                    border-right: 1px solid #ddd;
+                                    overflow-y: auto;
+                                    height: 600px;
+                                }
+                        
+                                .location-item {
+                                    margin-bottom: 20px;
+                                }
+                        
+                                .location-item h3 {
+                                    margin-bottom: 5px;
+                                    color: #333;
+                                }
+                        
+                                .location-item p {
+                                    margin: 0;
+                                    color: #666;
+                                }
+                        
+                                .location-item a {
+                                    display: block;
+                                    margin-top: 10px;
+                                    color: #f05423;
+                                    text-decoration: none;
+                                }
+                        
+                                .location-item a:hover {
+                                    text-decoration: underline;
+                                }
+                        
+                                .map-container {
+                                    width: 70%;
+                                    height: 600px;
+                                }
+                        
+                                .header {
+                                    background-color: #f05423;
+                                    color: white;
+                                    text-align: center;
+                                    padding: 10px 0;
+                                    font-size: 24px;
+                                    font-weight: bold;
+                                }
+                            </style>
+                        </head>
+                        
+                        <body>
+                            <div class="header">Mukuru Africa - Location Finder</div>
+                        
+                            <div class="content-container">
+                                <!-- Location List Section -->
+                                <div class="location-list-container">
+                                    <div class="location-item">
+                                        <h3>Mukuru Africa: Cyrildene Branch</h3>
+                                        <p>32 Derrick Avenue, Cyrildene</p>
+                                        <a href="#">More Info</a>
+                                    </div>
+                                    <div class="location-item">
+                                        <h3>Mukuru Africa: Bosman Street Branch</h3>
+                                        <p>Station Square Shopping centre, c/o Bosman and Jacob Maree Street, Pretoria</p>
+                                        <a href="#">More Info</a>
+                                    </div>
+                                    <div class="location-item">
+                                        <h3>Mukuru Africa: Braamfontein Branch</h3>
+                                        <p>Cnr of Leyds and Simmonds, Shop 3, J-One Building, Braamfontein</p>
+                                        <a href="#">More Info</a>
+                                    </div>
+                                    <div class="location-item">
+                                        <h3>Mukuru Africa: Hillbrow Branch</h3>
+                                        <p>Highpoint Shopping Centre, C/o Claim and Kotze street, Hillbrow, Johannesburg</p>
+                                        <a href="#">More Info</a>
+                                    </div>
+                                    <div class="location-item">
+                                        <h3>Mukuru Africa: Kempton Park Branch</h3>
+                                        <p>Kempton Place, 12 Pretoria Road, Kempton Park, Johannesburg</p>
+                                        <a href="#">More Info</a>
+                                    </div>
+                                    <div class="location-item">
+                                        <h3>Mukuru Africa: Sunnyside Branch</h3>
+                                        <p>Adverto Towers Building, Robert Sobukwe Street, Sunnyside, Pretoria</p>
+                                        <a href="#">More Info</a>
+                                    </div>
+                                    <div class="location-item">
+                                        <h3>Mukuru Africa: Yeoville Branch</h3>
+                                        <p>Picadilly Mall, 1 Rocky Street, Yeoville, Johannesburg</p>
+                                        <a href="#">More Info</a>
+                                    </div>
+                                </div>
+                        
+                                <!-- Map Section -->
+                                <div id="map" class="map-container">
+                                    <!-- Map will be rendered here -->
+                                </div>
+                            </div>
+                        
+                            <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+                            <script>
+                                // Initialize the Leaflet map and set its view to Africa
+                                var map = L.map('map').setView([5.0, 20.0], 3);
+                        
+                                // Add the OpenStreetMap tiles
+                                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                }).addTo(map);
+                        
+                                // Add markers for locations (replace with actual coordinates)
+                                L.marker([-26.1841, 28.1037]).addTo(map)
+                                    .bindPopup('Mukuru Africa: Cyrildene Branch')
+                                    .openPopup();
+                        
+                                L.marker([-25.7465, 28.1890]).addTo(map)
+                                    .bindPopup('Mukuru Africa: Bosman Street Branch');
+                        
+                                L.marker([-26.1952, 28.0341]).addTo(map)
+                                    .bindPopup('Mukuru Africa: Braamfontein Branch');
+                        
+                                L.marker([-26.1865, 28.0379]).addTo(map)
+                                    .bindPopup('Mukuru Africa: Hillbrow Branch');
+                        
+                                L.marker([-26.0999, 28.2336]).addTo(map)
+                                    .bindPopup('Mukuru Africa: Kempton Park Branch');
+                        
+                                L.marker([-25.7512, 28.1963]).addTo(map)
+                                    .bindPopup('Mukuru Africa: Sunnyside Branch');
+                        
+                                L.marker([-26.1888, 28.0600]).addTo(map)
+                                    .bindPopup('Mukuru Africa: Yeoville Branch');
+                            </script>
+                        </body>
 </html>
