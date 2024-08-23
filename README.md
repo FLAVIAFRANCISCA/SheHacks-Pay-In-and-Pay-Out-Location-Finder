@@ -54,7 +54,7 @@ Usage
         
 Presentation slides
 
-[https://wethinkcode-community.slack.com/archives/D07JLV42XMF/p1724414463462279](https://www.canva.com/design/DAGOqyj2BQk/wfZEYFQPGj_Bvs_Yld0Bww/edit?utm_content=DAGOqyj2BQk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+https://www.canva.com/design/DAGOrFm4NlQ/y46LS8W3Twy5zjg6VjEJtg/edit?utm_content=DAGOrFm4NlQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 ### Contributors
 
