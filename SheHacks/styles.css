@@ -64,12 +64,13 @@ h1 {
 }
 
 .container {
-  margin: 20px 20%;
+  margin: 20px auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  flex: 1; /* Allows the container to grow and push footer down */
+  width: 90%; /* Adjust width to fit the content better */
+  max-width: 800px; /* Set a maximum width for larger screens */
 }
 
 .hero {
